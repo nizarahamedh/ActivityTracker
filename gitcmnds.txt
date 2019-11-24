@@ -1,0 +1,87 @@
+git --version
+
+git init
+
+--To ignore folders like npm dependency add to this file
+.git-ignore
+
+--status 
+git status
+
+--git add to all
+git add .
+
+--git commit "Message"
+git commit -m "First Version of Employee Assignment"
+
+
+GITBASH SSH KEY
+--To look for the ssh file
+ls -a -l ~/.ssh 
+
+--GENERATING SSH KEY t is algorthm b is bits 
+ssh-keygen -t rsa -b 4096 -C "nizargm@gmail.com"
+
+--Running ssh-agent
+ eval $(ssh-agent -s)
+
+--To register the private key
+ ssh-add ~/.ssh/id_rsa
+
+-- to content of public key 
+ cat ~/.ssh/id_rsa.pub
+
+ --copy the output of this and paste it in the github or heroku servers
+ --copy the full content from ssh till emailid
+--This will be added to sshkey in github
+
+--to connect with git ssh connection after adding out publickey to repository server
+--give yes for options 
+ssh -T git@github.com
+
+--The authenticity of host 'github.com (192.30.253.112)' can't be established.
+--RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+--Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+--Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+--Hi nizarahamedh! You've successfully authenticated, but GitHub does not provide shell access.
+
+
+
+--setting up channel of communiation for githup
+git remote add origin https://github.com/nizarahamedh/employee-assignment.git
+
+git push -u origin master
+
+
+git commit -m " Stylesheet update for Microsoft Edge Browser compatibility"
+
+git commit -m "First Version of Habit Tracker"
+
+
+--create a branch called testing
+git branch testing
+-- to switch to the branch
+git checkout testing
+
+--create and switch to a new branch
+git checkout -b iss53
+
+--to display the branch history 
+ git log --oneline --decorate
+
+--create and switch to a  hotfix
+git checkout -b hotfix
+after the changes are done commit the fix
+  git commit -a -m  "HotFix to master Branch"
+
+-- Branching to the master branch and merging the hotfix changes
+git checkout master
+git merge hotfix
+
+--Deleting the branch 
+git branch -d hotfix
+
+--Branching to the Testing branch
+git checkout testing
+-- to merge the master file
+git merge master

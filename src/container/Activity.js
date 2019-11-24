@@ -90,6 +90,7 @@ class Activity extends Component {
   }
 
   componentDidUpdate () {
+
     this.loadData();
     console.log("componentDidUpdate ", this.state)
   }  
@@ -404,6 +405,7 @@ validateFormAct() {
     const person = formRead.person;
     const activityDate = formRead.activityDate;
     this.defaultFormFieldStates();
+    debugger
     if(!this.checkPersonInput(person))
     {
       return;
